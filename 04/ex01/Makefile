@@ -1,4 +1,4 @@
-NAME	=		animal
+NAME	=		brain
 
 SRCS	=		$(shell find . -type f -name '*.cpp')
 
