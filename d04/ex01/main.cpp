@@ -30,15 +30,24 @@ int main()
 	std::cout << "__________________________________" << std::endl;
 
 	Animal *animals[10];
+
 	for (int a = 0; a < 10; a++)
 	{
-		if (a % 2 == 0)
+		if (a % 2 == 0) {
 			animals[a] = new Cat();
-		else
+			std::cout << a << std::endl;
+		}
+		else {
 			animals[a] = new Dog();
+			std::cout << a << std::endl;
+		}
 	}
-	for (int a = 0; a < 10; a++)
+	std::cout << "__________________________________" << std::endl;
+	for (int a = 0; a < 10; a++) {
 		delete animals[a];
+		std::cout << "delete - " << a << std::endl;
+	}
+	std::cout << "__________________________________" << std::endl;
 	delete j;
 	delete i;
 	delete meta;
