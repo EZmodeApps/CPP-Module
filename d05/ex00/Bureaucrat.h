@@ -12,8 +12,8 @@ public:
 	Bureaucrat &operator=(const Bureaucrat &src);
 	~Bureaucrat();
 
-	int getGrade();
-	std::string getName();
+	int getGrade() const;
+	std::string getName() const;
 	void incGrade();
 	void decGrade();
 
@@ -51,5 +51,6 @@ private:
 	int grade;
 };
 
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &src);
 
 #endif //D05_BUREAUCRAT_H

@@ -22,11 +22,11 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src) {
 
 Bureaucrat::~Bureaucrat() {}
 
-int Bureaucrat::getGrade() {
+int Bureaucrat::getGrade() const {
 	return grade;
 }
 
-std::string Bureaucrat::getName() {
+std::string Bureaucrat::getName() const {
 	return name;
 }
 
@@ -38,9 +38,13 @@ void Bureaucrat::decGrade() {
 }
 
 void Bureaucrat::incGrade() {
-	if (this->grade == 0)
+	if (this->grade == 1)
 		throw high;
 	else
 		this->grade--;
 }
 
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &src) {
+	out << "Bureaucrat " << src.getName() << ", grade is " << src.getGrade() << ".";
+	return out;
+}
