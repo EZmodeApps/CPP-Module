@@ -15,7 +15,7 @@ CPPFLAGS	=	-MMD -I.
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	$(CXX) $^ -o $@
+	$(CXX) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS) $(DEP)
