@@ -45,7 +45,7 @@ bool Form::beSigned(Bureaucrat &src){
 		throw high;
 	else if (src.getGrade() > 150)
 		throw low;
-	if (src.getGrade() >= getSignedGrade())
+	if (src.getGrade() <= getSignedGrade())
 	{
 		_signed = true;
 		return true;
@@ -55,15 +55,15 @@ bool Form::beSigned(Bureaucrat &src){
 }
 
 const char* Form::UnsignedFormException::what() const throw() {
-	return "FormException: Unsigned form";
+	return "Exception: form is unsigned!";
 }
 
 void Form::execute(Bureaucrat const &src) const {
 	if (execGrade < src.getGrade())
-		throw GradeTooLowException();
+		throw low;
 	if (!this->_signed)
 		throw UnsignedFormException();
-	return ;
+//	return ;
 }
 
 std::ostream &operator<<(std::ostream &out, const Form &src) {

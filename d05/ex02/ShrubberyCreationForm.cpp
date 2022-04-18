@@ -43,7 +43,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		file.close();
 	}
 	else
-		std::cout << "Problem with ofstream!\n";
+		std::cout << "Ofstream error!" << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, const ShrubberyCreationForm &src) {

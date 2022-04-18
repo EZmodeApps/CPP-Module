@@ -14,7 +14,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 	Form::execute(executor);
 	std::cout << "* DRILLING NOISES *" << std::endl;
-	std::cout << target << " was successfully robotomized 50% of the time";
+	std::cout << target << " was successfully robotomized 50% of the time.";
 	std::cout << std::endl;
 //	return ;
 }

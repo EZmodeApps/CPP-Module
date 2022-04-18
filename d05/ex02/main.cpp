@@ -5,7 +5,7 @@
 
 int main () {
 	Bureaucrat a("Jim", 42);
-	Bureaucrat b("Jack",149);
+	Bureaucrat b("Jack",101);
 	Bureaucrat c("John", 1);
 
 	std::cout << a <<std::endl;
@@ -19,25 +19,26 @@ int main () {
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	b.signForm(sForm);
 	sForm.execute(b);
-	std::cout << sForm.getSigned() << "\n";
+	std::cout << sForm;
 
 	RobotomyRequestForm rForm("R2D2");
 	a.signForm(rForm);
 	rForm.execute(a);
+	std::cout << rForm;
 
-	PresidentialPardonForm pForm("abba");
+	PresidentialPardonForm pForm("abcde");
 	a.signForm(pForm);
 	a.executeForm(pForm);
-	std::cout << pForm.getSigned() << "\n";
+	std::cout << pForm;
 
 	PresidentialPardonForm* pfForm = new PresidentialPardonForm("abchihcba");
 	PresidentialPardonForm& pfFormRef = *pfForm;
 	b.signForm(pfFormRef);
 	b.executeForm(pfFormRef);
-	std::cout << pfFormRef << std::endl;
+	std::cout << pfFormRef;
 	return (0);
 }
