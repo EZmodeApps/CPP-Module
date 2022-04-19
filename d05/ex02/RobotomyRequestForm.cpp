@@ -2,14 +2,22 @@
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target): Form("RobotomyRequestForm", 72, 45), target(target) {}
 
-//RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src): target(src.getTarget()) {}
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src): Form(src) {
+	target = src.getTarget();
+}
 
-//RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &src) {
-//	this->target = src.getTarget();
-//	return *this;
-//}
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &src) {
+	Form::operator=(src);
+	this->target = src.getTarget();
+	return *this;
+}
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
+
+
+std::string RobotomyRequestForm::getTarget() const {
+	return target;
+}
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 	Form::execute(executor);

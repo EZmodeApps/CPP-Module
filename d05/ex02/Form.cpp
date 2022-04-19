@@ -10,10 +10,10 @@ Form::Form(std::string name, int signGrade, int execGrade): name(name), signGrad
 
 Form::Form(const Form &src): name(src.getName()), _signed(src.getSigned()), signGrade(src.getSignedGrade()), execGrade(src.getExecGrade()) {}
 
-//Form &Form::operator=(const Form &src) {
-//	this->_signed = src.getSigned();
-//	return *this;
-//}
+Form &Form::operator=(const Form &src) {
+	this->_signed = src.getSigned();
+	return *this;
+}
 
 Form::~Form() {}
 
@@ -63,7 +63,6 @@ void Form::execute(Bureaucrat const &src) const {
 		throw low;
 	if (!this->_signed)
 		throw UnsignedFormException();
-//	return ;
 }
 
 std::ostream &operator<<(std::ostream &out, const Form &src) {

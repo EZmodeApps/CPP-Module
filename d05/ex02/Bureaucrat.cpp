@@ -65,8 +65,7 @@ void	Bureaucrat::executeForm(Form const & form) {
 	}
 	catch (const std::exception &e)
 	{
-		std::cout << "Error while executing by bureaucrat " << name;
-		std::cout << " because of " << e.what() << std::endl;
+		std::cout << "Bureaucrat " << name << " couldn't execute the form because: " << e.what() << std::endl;
 		return ;
 	}
 	std::cout << name << " executes " << form << std::endl;

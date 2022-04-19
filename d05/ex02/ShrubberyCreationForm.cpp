@@ -2,12 +2,15 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form("ShrubberyCreationForm", 145, 137), target(target) {}
 
-//ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src): target(src.getTarget()) {}
-//
-//ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &src) {
-//	this->target = src.getTarget();
-//	return *this;
-//}
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src): Form(src) {
+	target = src.getTarget();
+}
+
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &src) {
+	Form::operator=(src);
+	this->target = src.getTarget();
+	return *this;
+}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
@@ -21,7 +24,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	std::ofstream file;
 
 	file.open(std::string(this->getTarget() + "_shrubbery").c_str(),
-			  std::ios::out	| std::ios::app);
+			  std::ios::out | std::ios::app);
 	if(file.is_open())
 	{
 		file << "          .     .  .      +     .      .          ." << std::endl;
@@ -43,7 +46,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		file.close();
 	}
 	else
-		std::cout << "Ofstream error!" << std::endl;
+		std::cerr << "Ofstream error!" << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, const ShrubberyCreationForm &src) {

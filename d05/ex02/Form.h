@@ -10,7 +10,7 @@ public:
 	Form();
 	Form(std::string name, int signGrade, int execGrade);
 	Form(const Form &src);
-	//Form &operator=(const Form &src);
+	Form &operator=(const Form &src);
 	virtual ~Form();
 
 	virtual std::string getName() const;

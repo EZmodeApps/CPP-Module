@@ -6,11 +6,11 @@
 class RobotomyRequestForm: public Form {
 public:
 	RobotomyRequestForm(std::string target);
-	//RobotomyRequestForm(const RobotomyRequestForm &src);
-	//RobotomyRequestForm &operator=(const RobotomyRequestForm &src);
+	RobotomyRequestForm(const RobotomyRequestForm &src);
+	RobotomyRequestForm &operator=(const RobotomyRequestForm &src);
 	~RobotomyRequestForm();
 
-//	std::string getTarget() const;
+	std::string getTarget() const;
 	void execute(Bureaucrat const &executor) const;
 
 	GradeTooHighException high;

@@ -2,19 +2,25 @@
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target): Form("PresidentialPardonForm", 25, 5), target(target) {}
 
-//PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src): target(src.getTarget()) {}
-//
-//PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &src) {
-//	this->target = src.getTarget();
-//	return *this;
-//}
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src): Form(src) {
+	target = src.getTarget();
+}
+
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &src) {
+	Form::operator=(src);
+	target = src.getTarget();
+	return *this;
+}
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
+
+std::string PresidentialPardonForm::getTarget() const {
+	return target;
+}
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 	Form::execute(executor);
 	std::cout << this->target << " has been pardoned by Zafod Beeblebrox." << std::endl;
-//	return ;
 }
 
 std::ostream &operator<<(std::ostream &out, const PresidentialPardonForm &src) {

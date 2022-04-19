@@ -1,4 +1,4 @@
-NAME	=		maggots
+NAME	=		28b
 
 SRCS	=		$(shell find . -type f -name '*.cpp')
 
