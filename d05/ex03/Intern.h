@@ -10,7 +10,6 @@ class Form;
 class Intern {
 
 public:
-
 	Intern();
 	Intern (const Intern &src);
 	Intern &operator = (const Intern &src);
@@ -30,7 +29,6 @@ public:
 			return error;
 		};
 	};
-
 };
 
 #endif //D05_INTERN_H

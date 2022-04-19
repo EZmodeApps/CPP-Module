@@ -66,7 +66,7 @@ void	Bureaucrat::executeForm(Form const & form) {
 		std::cout << "Bureaucrat " << name << " couldn't execute the form because: " << e.what() << std::endl;
 		return ;
 	}
-	std::cout << name << " executes " << form << std::endl;
+	std::cout << name << " executes " << form;
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &src) {

@@ -54,7 +54,6 @@ void Bureaucrat::signForm(Form &src) {
 		return ;
 	}
 	std::cout << this->getName() << " signed " << src.getName() << "." << std::endl;
-	return ;
 
 }
 

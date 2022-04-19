@@ -10,7 +10,7 @@ int main () {
 
 	std::cout << a <<std::endl;
 	std::cout << b <<std::endl;
-	std::cout << c << std::endl;
+	std::cout << c << "\n" << std::endl;
 
 	ShrubberyCreationForm sForm("shrub");
 	try {
@@ -27,7 +27,7 @@ int main () {
 	catch(const std::exception& e) {
 		std::cout << "Bureaucrat " << b.getName() << " couldn't execute the form because: " << e.what() << std::endl;
 	}
-	std::cout << sForm;
+	std::cout << sForm << "\n";
 
 	RobotomyRequestForm rForm("robot");
 	a.signForm(rForm);
