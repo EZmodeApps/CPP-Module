@@ -1,0 +1,9 @@
+# ninja log v5
+2	1844	1650377953993215034	CMakeFiles/d05.dir/ex03/main.cpp.o	180d0d36f7e9265e
+1	1890	1650377954043189674	CMakeFiles/d05.dir/ex03/Bureaucrat.cpp.o	288e11108449714c
+5	990	1650378100827714292	CMakeFiles/d05.dir/ex03/Form.cpp.o	40cfcce8e1c186cc
+6	1903	1650377954059754563	CMakeFiles/d05.dir/ex03/RobotomyRequestForm.cpp.o	88ed4d95318a9356
+4	1897	1650377954053053702	CMakeFiles/d05.dir/ex03/PresidentialPardonForm.cpp.o	f16479b50e9c7248
+7	1965	1650377954124842367	CMakeFiles/d05.dir/ex03/ShrubberyCreationForm.cpp.o	71aad95cfb5a3b22
+2	1893	1650377954047581159	CMakeFiles/d05.dir/ex03/Intern.cpp.o	2c46883bbb410088
+990	1068	1650378100909660337	d05	40338c7a8fdce494

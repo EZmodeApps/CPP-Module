@@ -3,9 +3,9 @@
 Form::Form(std::string name, int signGrade, int execGrade): name(name), signGrade(signGrade), execGrade(execGrade) {
 	this->_signed = false;
 	if (execGrade > 150 || signGrade > 150)
-		throw Form::high;
-	else if (execGrade < 1 || signGrade < 1)
 		throw Form::low;
+	else if (execGrade < 1 || signGrade < 1)
+		throw Form::high;
 }
 
 Form::Form(const Form &src): name(src.getName()), _signed(src.getSigned()), signGrade(src.getSignedGrade()), execGrade(src.getExecGrade()) {}
