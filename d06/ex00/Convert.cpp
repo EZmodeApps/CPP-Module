@@ -138,7 +138,7 @@ void Convert::printChar() {
 	std::cout << "char: ";
 
 	if (value < 0 || value > 127 || std::isnan(value))
-		std::cout << "wrong char";
+		std::cout << "impossible";
 	else if (value < 32 || value > 126)
 		std::cout << "char is not printable";
 	else
@@ -153,7 +153,7 @@ void Convert::printInt() {
 	if (value > std::numeric_limits<int>::max()
 		|| value < std::numeric_limits<int>::min()
 		|| std::isnan(value))
-		std::cout << "bad argument!" << std::endl;
+		std::cout << "impossible" << std::endl;
 	else
 		std::cout << static_cast<int>(value) << std::endl;
 }
