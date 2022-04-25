@@ -14,7 +14,7 @@ public:
 	~Convert();
 
 	bool convertStr(char *str);
-	void printValue();
+	void printAll();
 
 private:
 	double value;
@@ -32,14 +32,16 @@ private:
 	void printInt();
 	void printFloat();
 	void printDouble();
-	class EmptyInput : public std::exception {
+	class emptyInput : public std::exception {
 	public:
-		virtual const char* what() const throw() { return ("Exception: argument is empty!"); }
+		virtual const char* what() const throw() {
+			return ("Exception: argument is empty!"); }
 	};
 
-	class NotNumeric : public std::exception {
+	class notNumeric : public std::exception {
 	public:
-		virtual const char* what() const throw() { return ("Exception: argument value is not numeric!"); }
+		virtual const char* what() const throw() {
+			return ("Exception: argument value is not numeric!"); }
 	};
 };
 
