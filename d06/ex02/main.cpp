@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <time.h>
 #include "A.h"
 #include "B.h"
 #include "C.h"

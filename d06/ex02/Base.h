@@ -2,6 +2,8 @@
 #define D06_BASE_H
 
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 
 class Base {
 public:
