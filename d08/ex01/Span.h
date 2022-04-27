@@ -28,6 +28,6 @@ public:
 	void addWithIterators(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 };
 
-std::ostream &	operator<<( std::ostream & ostr, Span const & instance);
+std::ostream &operator<<( std::ostream &ostr, Span const &src);
 
 #endif //D08_SPAN_H

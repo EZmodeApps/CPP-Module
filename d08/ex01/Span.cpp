@@ -78,7 +78,6 @@ int Span::longestSpan() const {
 }
 
 void Span::addWithIterators(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
-
 	std::vector<int> temp(begin, end);
 	if (temp.size() > memory)
 		throw std::out_of_range("Can't add so many numbers");
@@ -88,23 +87,18 @@ void Span::addWithIterators(std::vector<int>::iterator begin, std::vector<int>::
 	}
 }
 
-std::ostream &	operator<<( std::ostream & ostr, Span const & instance)
-{
+std::ostream &operator<<( std::ostream &ostr, Span const &src) {
 	std::cout << "Span:" <<std::endl;
-	for (unsigned int i = 0; i < instance.numbers.size(); i++)
-		std::cout << instance.numbers[i] << " ";
+	for (unsigned int i = 0; i < src.numbers.size(); i++)
+		std::cout << src.numbers[i] << " ";
 	std::cout << std::endl;
-	try
-	{
-		int	shortest = instance.shortestSpan();
-		int	longest = instance.longestSpan();
-
+	try {
+		int	shortest = src.shortestSpan();
+		int	longest = src.longestSpan();
 		ostr << "Shortest span is "	<< shortest << ".\n" <<"Longest span is " << longest << ".";
 	}
-	catch(const std::exception& e)
-	{
+	catch(const std::exception& e) {
 		ostr << "Too few values to print information";
 	}
-
 	return ostr;
 }
